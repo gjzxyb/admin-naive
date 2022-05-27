@@ -1,0 +1,12 @@
+/node_modules/**
+/public/*
+/dist/*
+
+.local
+.output.js
+
+**/*.svg
+**/*.sh
+
+# 忽略html文件:
+*.html

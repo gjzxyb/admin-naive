@@ -22,15 +22,15 @@
 
   const menuOptions = [
     {
-      label: '且听风吟',
+      label: '表盘',
       key: 'hear-the-wind-sing',
       icon: renderIcon(BookIcon),
     },
     {
-      label: '1973年的弹珠玩具',
+      label: '项目管理',
       key: 'pinball-1973',
       icon: renderIcon(BookIcon),
-      disabled: true,
+      disabled: false,
       children: [
         {
           label: '鼠',
@@ -41,11 +41,11 @@
     {
       label: '寻羊冒险记',
       key: 'a-wild-sheep-chase',
-      disabled: true,
+      disabled: false,
       icon: renderIcon(BookIcon),
     },
     {
-      label: '舞，舞，舞',
+      label: '权限管理',
       key: 'dance-dance-dance',
       icon: renderIcon(BookIcon),
       children: [

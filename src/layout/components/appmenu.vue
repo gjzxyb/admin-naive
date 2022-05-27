@@ -39,7 +39,7 @@
       ],
     },
     {
-      label: '寻羊冒险记',
+      label: '人员管理',
       key: 'a-wild-sheep-chase',
       disabled: false,
       icon: renderIcon(BookIcon),

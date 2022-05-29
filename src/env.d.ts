@@ -6,3 +6,7 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+export interface ImportMetaEnv {
+  VITE_API_BASEURL: string
+  // 更多环境变量...
+}

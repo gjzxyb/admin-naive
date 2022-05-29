@@ -5,15 +5,11 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    NGi: typeof import('naive-ui')['NGi']
-    NGrid: typeof import('naive-ui')['NGrid']
-    NLayout: typeof import('naive-ui')['NLayout']
-    NLayoutFooter: typeof import('naive-ui')['NLayoutFooter']
-    NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
-    NLayoutSider: typeof import('naive-ui')['NLayoutSider']
-    NMenu: typeof import('naive-ui')['NMenu']
-    NSpace: typeof import('naive-ui')['NSpace']
-    NSwitch: typeof import('naive-ui')['NSwitch']
+    ElAside: typeof import('element-plus/es')['ElAside']
+    ElContainer: typeof import('element-plus/es')['ElContainer']
+    ElHeader: typeof import('element-plus/es')['ElHeader']
+    ElMain: typeof import('element-plus/es')['ElMain']
+    ElMenu: typeof import('element-plus/es')['ElMenu']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -1,32 +1,45 @@
 <template>
-  <n-space vertical>
-    <n-layout>
-      <n-layout-header :inverted="inverted" bordered position:absolute style="height: 60px">
-        <headervue />
-        <n-space> <n-switch v-model:value="inverted" /> inverted </n-space>
-      </n-layout-header>
-      <n-layout has-sider>
-        <n-layout-sider
-          bordered
-          show-trigger
-          collapse-mode="width"
-          :collapsed-width="64"
-          :width="240"
-          :native-scrollbar="false"
-          :inverted="inverted"
-          style="height: 100vh"
-        >
-          <appmenuVue />
-        </n-layout-sider>
-        <n-layout style="height: 100vh"> <router-view /> </n-layout>
-      </n-layout>
-      <n-layout-footer :inverted="inverted" bordered> Footer Footer Footer </n-layout-footer>
-    </n-layout>
-  </n-space>
+  <el-container>
+    <el-aside>
+      <AppMenu />
+    </el-aside>
+    <el-container>
+      <el-header>
+        <AppHeader />
+      </el-header>
+      <el-main>
+        <router-view />
+      </el-main>
+    </el-container>
+  </el-container>
 </template>
 
 <script lang="ts" setup>
-  import appmenuVue from './components/appmenu.vue'
-  import headervue from './components/header.vue'
-  const inverted = ref(false)
+  import AppMenu from './AppMenu/index.vue'
+  //import AppHeader from './AppHeader/index.vue'
 </script>
+
+<style lang="scss" scoped>
+  .el-container {
+    height: 100vh;
+  }
+
+  .el-header {
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .el-aside {
+    width: auto;
+    background-color: #304156;
+    color: #333;
+  }
+
+  .el-main {
+    background-color: #e9eef3;
+    color: #333;
+  }
+</style>

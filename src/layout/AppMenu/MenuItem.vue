@@ -15,9 +15,8 @@
 </template>
 
 <script lang="ts" setup>
-  import { ref } from '@vue/runtime-core'
-  import type { PropType } from '@vue/runtime-core'
   import type { IMenu } from '@/api/types/common'
+  import { PropType } from '@vue/runtime-core'
 
   const props = defineProps({
     menu: {

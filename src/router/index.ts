@@ -15,22 +15,22 @@ export const constantRoutes: RouteRecordRaw[] = [
     },
   },
   {
-    path: '/exception',
-    name: 'Exception',
-    redirect: '/exception/404',
+    path: '/error-page',
+    name: 'error-page',
+    redirect: '/error-page/404',
     component: RouterView,
-    meta: { title: 'Exception', hidden: true, ignoreAuth: true },
+    meta: { title: 'error-page', hidden: true, ignoreAuth: true },
     children: [
       {
         path: '404',
         name: '404',
-        component: () => import('@/views/exception/404.vue'),
+        component: () => import('@/views/error-page/404.vue'),
         meta: { title: '404', ignoreAuth: true },
       },
       {
         path: '500',
         name: '500',
-        component: () => import('@/views/exception/500.vue'),
+        component: () => import('@/views/error-page/500.vue'),
         meta: { title: '500', ignoreAuth: true },
       },
     ],
@@ -46,13 +46,13 @@ export const constantRoutes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'Home',
-    redirect: '/dashboard',
+    redirect: '/home',
     component: applayout,
     children: [
       {
-        path: 'dashboard',
-        name: 'Dashboard',
-        component: () => import('@/views/dashboard/index.vue'),
+        path: 'home',
+        name: 'home',
+        component: () => import('@/views/home/index.vue'),
         meta: { title: '仪表盘', affixTab: true, sort: -1 },
       },
     ],

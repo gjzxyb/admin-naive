@@ -15,8 +15,8 @@
     "baseUrl": ".",
     "types": ["element-plus/global"],
     "paths": {
-      "@/*": ["src/*"],
-      "#/*": ["types/*"]
+      "@*": ["src/*"],
+      "#*": ["types/*"]
     }
   },
   "include": [
@@ -27,5 +27,6 @@
     "types/**/*.ts",
     "types/**/*.d.ts"
   ],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "exclude": ["node_modules", "dist"]
 }

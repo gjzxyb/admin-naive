@@ -6,15 +6,16 @@
     background-color="#304156"
     text-color="rgba(255, 255, 255, 0.7)"
     active-text-color="#2d8cf0"
-    :collapse="$store.state.isCollapse"
+    :collapse="usestore.state.isCollapse"
     router
   >
-    <menu-item v-for="menu in $store.state.menus" :key="menu.path" :menu="menu" />
+    <menu-item v-for="menu in usestore.state.menus" :key="menu.path" :menu="menu" />
   </el-menu>
 </template>
 
 <script lang="ts" setup>
-  import MenuItem from './MenuItem.vue'
+  //import MenuItem from './MenuItem.vue'
+  import { usestore } from '@store/usestore'
 </script>
 
 <style lang="scss" scoped>

@@ -10,6 +10,6 @@ export const getUserLabels = () => {
     list: IUserLabel[]
   }>({
     method: 'GET',
-    url: '/user/user_label'
+    url: '/user/user_label',
   })
 }

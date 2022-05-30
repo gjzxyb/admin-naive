@@ -8,7 +8,7 @@ import {
   ProductAttrTpl,
   IExpressTemplate,
   AttrTableHeader,
-  ProductAttr
+  ProductAttr,
 } from './types/product'
 
 /**
@@ -20,7 +20,7 @@ export const getProductTypes = () => {
     list: ProductType[]
   }>({
     method: 'GET',
-    url: '/product/product/type_header'
+    url: '/product/product/type_header',
   })
 }
 
@@ -36,7 +36,7 @@ export const getProducts = (params?: ProductListParams) => {
   }>({
     method: 'GET',
     url: '/product/product',
-    params
+    params,
   })
 }
 
@@ -50,7 +50,7 @@ export const saveProduct = (id: number, data: any) => {
   return request({
     method: 'POST',
     url: `/product/product/${id}`,
-    data
+    data,
   })
 }
 
@@ -92,17 +92,28 @@ export const getProduct = (id: number) => {
         brokerage: number
         brokerage_two: number
       }
-    } & Omit<Product, 'cate_id' | 'is_sub' | 'activity' | 'label_id' | 'collect' | 'likes' | 'visitor' | 'cate_name' | 'stock_attr'>
+    } & Omit<
+      Product,
+      | 'cate_id'
+      | 'is_sub'
+      | 'activity'
+      | 'label_id'
+      | 'collect'
+      | 'likes'
+      | 'visitor'
+      | 'cate_name'
+      | 'stock_attr'
+    >
   }>({
     method: 'GET',
-    url: `/product/product/${id}`
+    url: `/product/product/${id}`,
   })
 }
 
 export const getCategoryTree = (type: 0 | 1) => {
   return request<ProductCategory[]>({
     method: 'GET',
-    url: `/product/category/tree/${type}`
+    url: `/product/category/tree/${type}`,
   })
 }
 
@@ -112,7 +123,7 @@ export const getCategoryTree = (type: 0 | 1) => {
 export const updateProductStatus = (id: number, status: number) => {
   return request({
     method: 'PUT',
-    url: `/product/product/set_show/${id}/${status}`
+    url: `/product/product/set_show/${id}/${status}`,
   })
 }
 
@@ -122,7 +133,7 @@ export const updateProductStatus = (id: number, status: number) => {
 export const removeProduct = (id: number) => {
   return request({
     method: 'DELETE',
-    url: `/product/product/${id}`
+    url: `/product/product/${id}`,
   })
 }
 
@@ -132,16 +143,20 @@ export const removeProduct = (id: number) => {
 export const getAttrs = () => {
   return request<ProductAttrTpl[]>({
     method: 'GET',
-    url: '/product/product/get_rule'
+    url: '/product/product/get_rule',
   })
 }
 
 /**
  * 生成商品属性
  */
-export const generateAttr = (id: number, type: 0 | 1, data: {
-  attrs: AttrRuleValue[]
-}) => {
+export const generateAttr = (
+  id: number,
+  type: 0 | 1,
+  data: {
+    attrs: AttrRuleValue[]
+  }
+) => {
   return request<{
     info: {
       attr: AttrRuleValue[]
@@ -151,7 +166,7 @@ export const generateAttr = (id: number, type: 0 | 1, data: {
   }>({
     method: 'POST',
     url: `/product/generate_attr/${id}/${type}`,
-    data
+    data,
   })
 }
 
@@ -161,7 +176,7 @@ export const generateAttr = (id: number, type: 0 | 1, data: {
 export const getExpressTemplate = () => {
   return request<IExpressTemplate[]>({
     method: 'GET',
-    url: '/product/product/get_template'
+    url: '/product/product/get_template',
   })
 }
 
@@ -171,7 +186,7 @@ export const getExpressTemplate = () => {
 export const getProductRules = () => {
   return request({
     method: 'GET',
-    url: '/product/product/rule'
+    url: '/product/product/rule',
   })
 }
 
@@ -183,8 +198,8 @@ export const updateProductsShow = (ids: number[]) => {
     method: 'PUT',
     url: '/product/product/product_show',
     data: {
-      ids
-    }
+      ids,
+    },
   })
 }
 
@@ -196,7 +211,7 @@ export const updateProductsUnshow = (ids: number[]) => {
     method: 'PUT',
     url: '/product/product/product_unshow',
     data: {
-      ids
-    }
+      ids,
+    },
   })
 }

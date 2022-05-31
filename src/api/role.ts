@@ -8,7 +8,7 @@ export const getRoles = (params: IListParams) => {
   }>({
     method: 'GET',
     url: '/setting/role',
-    params
+    params,
   })
 }
 
@@ -16,21 +16,21 @@ export const saveRole = (id: number, data: RolePostData) => {
   return request({
     method: 'POST',
     url: `/setting/role/${id}`,
-    data
+    data,
   })
 }
 
 export const deleteRole = (id: number) => {
   return request({
     method: 'DELETE',
-    url: `/setting/role/${id}`
+    url: `/setting/role/${id}`,
   })
 }
 
 export const updateRoleStatus = (id: number, status: 0 | 1) => {
   return request({
     method: 'PUT',
-    url: `/setting/role/set_status/${id}/${status}`
+    url: `/setting/role/set_status/${id}/${status}`,
   })
 }
 
@@ -40,7 +40,7 @@ export const getRole = (id: number) => {
     menus: Menu[]
   }>({
     method: 'GET',
-    url: `/setting/role/${id}/edit`
+    url: `/setting/role/${id}/edit`,
   })
 }
 
@@ -49,6 +49,6 @@ export const getMenus = () => {
     menus: Menu[]
   }>({
     method: 'GET',
-    url: '/setting/role/create'
+    url: '/setting/role/create',
   })
 }

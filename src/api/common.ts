@@ -7,7 +7,7 @@ import { ILoginInfo, ILoginResponse } from './types/common'
 export const getLoginInfo = () => {
   return request<ILoginInfo>({
     method: 'GET',
-    url: '/login/info'
+    url: '/login/info',
   })
 }
 
@@ -16,27 +16,23 @@ export const getCaptcha = () => {
     method: 'GET',
     url: '/captcha_pro',
     params: {
-      stamp: Date.now()
+      stamp: Date.now(),
     },
-    responseType: 'blob' // 请求获取图片数据
+    responseType: 'blob', // 请求获取图片数据
   })
 }
 
-export const login = (data: {
-  account: string
-  pwd: string
-  imgcode: string
-}) => {
+export const login = (data: { account: string; pwd: string; imgcode: string }) => {
   return request<ILoginResponse>({
     method: 'POST',
     url: '/login',
-    data
+    data,
   })
 }
 
 export const logout = () => {
   return request({
     method: 'GET',
-    url: '/setting/admin/logout'
+    url: '/setting/admin/logout',
   })
 }

@@ -3,17 +3,17 @@
 </template>
 
 <script lang="ts" setup>
-  import { useStore } from '@/store'
+  import { usestore } from '@/store/useStore'
   import { computed } from 'vue'
 
-  const store = useStore()
+  const store = usestore()
 
   const collapseIcon = computed(() => {
-    return !store.state.isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'
+    return !store.isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'
   })
 
   const handleCollapse = () => {
-    store.commit('setIsCollapse', !store.state.isCollapse)
+    store.commit('setIsCollapse', !store.isCollapse)
   }
 </script>
 

@@ -1,4 +1,5 @@
 <template>
+  <el-icon><Expand /></el-icon>
   <i :class="collapseIcon" @click="handleCollapse"></i>
 </template>
 

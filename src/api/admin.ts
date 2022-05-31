@@ -9,7 +9,7 @@ export const getAdmins = (params: IListParams) => {
   }>({
     method: 'GET',
     url: '/setting/admin',
-    params
+    params,
   })
 }
 
@@ -17,7 +17,7 @@ export const createAdmin = (data: AdminPostData) => {
   return request({
     method: 'POST',
     url: '/setting/admin',
-    data
+    data,
   })
 }
 
@@ -25,30 +25,30 @@ export const updateAdmin = (id: number, data: AdminPostData) => {
   return request({
     method: 'PUT',
     url: `/setting/admin/${id}`,
-    data
+    data,
   })
 }
 
 export const deleteAdmin = (id: number) => {
   return request({
     method: 'DELETE',
-    url: `/setting/admin/${id}`
+    url: `/setting/admin/${id}`,
   })
 }
 
 export const updateAdminStatus = (id: number, status: number) => {
   return request({
     method: 'PUT',
-    url: `/setting/set_status/${id}/${status}`
+    url: `/setting/set_status/${id}/${status}`,
   })
 }
 
 export const getRoles = () => {
   return request<IFormData>({
     method: 'GET',
-    url: '/setting/admin/create'
-  }).then(data => {
-    const roles = data.rules.find(item => item.field === 'roles')
+    url: '/setting/admin/create',
+  }).then((data) => {
+    const roles = data.rules.find((item) => item.field === 'roles')
     if (roles && roles.options) {
       return roles.options
     }
@@ -59,10 +59,10 @@ export const getRoles = () => {
 export const getAdmin = (id: number) => {
   return request<IFormData>({
     method: 'GET',
-    url: `/setting/admin/${id}/edit`
-  }).then(data => {
+    url: `/setting/admin/${id}/edit`,
+  }).then((data) => {
     const obj: Record<string, any> = {}
-    data.rules.forEach(item => {
+    data.rules.forEach((item) => {
       obj[item.field] = item.value
     })
     return obj as {

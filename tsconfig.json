@@ -13,7 +13,7 @@
     "lib": ["esnext", "dom"],
     "skipLibCheck": true,
     "baseUrl": ".",
-    "types": ["element-plus/global"],
+    "types": ["element-plus/global", "unplugin-icons/types/vue"],
     "paths": {
       "@*": ["src/*"],
       "#*": ["types/*"]

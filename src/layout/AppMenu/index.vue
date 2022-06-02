@@ -1,8 +1,16 @@
 <template>
-  <el-menu default-active="2" class="el-menu-vertical-demo" :collapse="store.isCollapse">
-    <el-menu-item index="1">
+  <el-menu
+    default-active="2"
+    class="el-menu-vertical-demo"
+    :collapse="store.isCollapse"
+    :router="true"
+  >
+    <el-menu-item index="/">
       <el-icon><icon-menu /></el-icon>
-      <template #title>Navigator Two</template>
+      <template #title>
+        <el-icon><HomeFilled /></el-icon>
+        首页
+      </template>
     </el-menu-item>
     <el-sub-menu index="2">
       <template #title>
@@ -10,7 +18,10 @@
         <span>Navigator One</span>
       </template>
       <el-menu-item-group>
-        <template #title><span>Group One</span></template>
+        <template #title
+          ><span
+            ><el-icon><document /></el-icon></span
+        ></template>
         <el-menu-item index="2-1">item one</el-menu-item>
         <el-menu-item index="2-2">item two</el-menu-item>
       </el-menu-item-group>
@@ -22,18 +33,6 @@
         <el-menu-item index="2-4-1">item one</el-menu-item>
       </el-sub-menu>
     </el-sub-menu>
-    <el-menu-item index="3">
-      <el-icon><icon-menu /></el-icon>
-      <template #title>Navigator Two</template>
-    </el-menu-item>
-    <el-menu-item index="4" disabled>
-      <el-icon><document /></el-icon>
-      <template #title>Navigator Three</template>
-    </el-menu-item>
-    <el-menu-item index="5">
-      <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
-    </el-menu-item>
   </el-menu>
 </template>
 
@@ -45,18 +44,21 @@
 <style>
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
-    min-height: 400px;
+    height: 100vh;
   }
 </style>
 
 <style lang="scss" scoped>
   .el-menu {
     border-right: none;
+    background-color: #304156;
+    font-size: medium;
+    font-style: #e7e9eb;
   }
 
   .el-menu:not(.el-menu--collapse) {
     width: 200px;
-    min-height: 400px;
+    height: 100vh;
   }
 
   // ::-webkit-scrollbar {

@@ -1,5 +1,8 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw, RouterView } from 'vue-router'
 import applayout from '@/layout/index.vue'
+import nprogress from 'nprogress' // @types/nprogress
+import 'nprogress/nprogress.css'
+
 export const constantRoutes: RouteRecordRaw[] = [
   {
     path: '/redirect/:path(.*)*',
@@ -69,5 +72,11 @@ const router = createRouter({
 })
 
 // 自定义添加路由守卫等
+router.beforeEach(() => {
+  nprogress.start() // 开始加载进度条
+})
 
+router.afterEach(() => {
+  nprogress.done() // 加载进度条
+})
 export default router

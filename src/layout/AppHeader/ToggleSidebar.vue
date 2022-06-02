@@ -1,20 +1,19 @@
 <template>
-  <el-icon><Expand /></el-icon>
-  <i :class="collapseIcon" @click="handleCollapse"></i>
+  <el-icon> <component :is="iconname" @click="changeicon" /></el-icon>
 </template>
 
 <script lang="ts" setup>
-  import { usestore } from '@/store/useStore'
-  import { computed } from 'vue'
-
-  const store = usestore()
-
-  const collapseIcon = computed(() => {
-    return !store.isCollapse ? 'el-icon-s-fold' : 'el-icon-s-unfold'
-  })
-
-  const handleCollapse = () => {
-    store.commit('setIsCollapse', !store.isCollapse)
+  let iisCollapse = ref(false)
+  let iconname = ref('fold')
+  const changeicon = () => {
+    if (iisCollapse.value) {
+      iisCollapse.value = false
+      iconname.value = 'Expand'
+    } else {
+      iisCollapse.value = true
+      iconname.value = 'fold'
+    }
+    return iconname
   }
 </script>
 

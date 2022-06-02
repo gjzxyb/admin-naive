@@ -16,6 +16,7 @@ import IconsResolver from 'unplugin-icons/resolver'
 
 export default defineConfig({
   plugins: [
+    Icons({ compiler: 'vue3' }),
     vueJsx({
       // 配置选项
     }),
@@ -31,7 +32,7 @@ export default defineConfig({
       // 导入文件的路径
       resolvers: [
         IconsResolver({
-          //prefix: 'Icon',
+          prefix: 'Icon',
         }),
         ElementPlusResolver(),
       ],
@@ -52,7 +53,7 @@ export default defineConfig({
     Components({
       resolvers: [
         IconsResolver({
-          //enabledCollections: ['ep'],
+          enabledCollections: ['ep'],
         }),
         ElementPlusResolver(),
       ],

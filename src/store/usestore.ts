@@ -1,7 +1,10 @@
 import { defineStore } from 'pinia'
-
+import { IUserInfo, IMenu } from '@/api/types/common'
 const state = {
   isCollapse: false,
+  user: null as ({ token: string } & IUserInfo) | null,
+  // user: getItem<{ token: string } & IUserInfo>(USER),
+  menus: [] as IMenu[],
 }
 
 export type State = typeof state
@@ -23,17 +26,12 @@ export const usestore = defineStore('main', {
   // },
   getters: {},
   actions: {
-    setIsCollapse(State, payload) {
-      State.isCollapse = payload
+    setIsCollapse() {
+      this.isCollapse = !this.isCollapse
     },
-
-    setUser(isCollapse, payload) {
-      isCollapse.user = payload
+    setUser(state: { user: any }, payload: any) {
+      state.user = payload
       // setItem(USER, state.user)
-    },
-
-    setMenus(isCollapse, payload) {
-      isCollapse.menus = payload
     },
   },
 })

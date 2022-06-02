@@ -1,16 +1,17 @@
 <template>
-  <el-icon> <component :is="iconname" @click="changeicon" /></el-icon>
+  <el-icon> <component :is="iconname" @click="handleFoldClick" /></el-icon>
 </template>
 
 <script lang="ts" setup>
-  let iisCollapse = ref(false)
+  import { usestore } from '@/store/useStore'
+  const store = usestore()
   let iconname = ref('fold')
-  const changeicon = () => {
-    if (iisCollapse.value) {
-      iisCollapse.value = false
+  const handleFoldClick = () => {
+    if (store.isCollapse) {
+      store.isCollapse = false
       iconname.value = 'Expand'
     } else {
-      iisCollapse.value = true
+      store.isCollapse = true
       iconname.value = 'fold'
     }
     return iconname
